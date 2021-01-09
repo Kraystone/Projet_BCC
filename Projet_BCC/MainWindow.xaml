@@ -1,0 +1,133 @@
+﻿<Window x:Class="Projet_BCC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_BCC"
+        mc:Ignorable="d"
+        Title="BCC" 
+        WindowState="Maximized"
+        WindowStyle="None">
+    <StackPanel>
+        <TabControl>
+            <TabItem Header="Page de Garde">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="138*"/>
+                        <ColumnDefinition Width="239*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Images/logoBCC.png" Margin="450,144,450,1704"  Grid.ColumnSpan="2"/>
+                    <TextBlock Name="descritpion"  Margin="45,772,45,1388" TextWrapping="Wrap" Grid.ColumnSpan="2" FontSize="18">
+                Consultez les annonces de ventes classées par catégories ou recherchez par mot-clé un artiste, un style ou un objet.<LineBreak />
+                Notre moteur de recherche permet de filtrer selon plusieurs critères :<LineBreak />
+                <LineBreak />
+                - Les régions, <LineBreak />
+                - Date de vente, <LineBreak />
+                - Estimation <LineBreak />
+                <LineBreak />
+                Et pour ne rien rater des ventes, BidCardCoin vous propose un service gratuit d’alertes par e-mail qui se déclenchent par mots-clés et vous informe automatiquement dès que le lot convoité est proposé aux enchères.
+                    </TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Ajouter un produit">
+                <StackPanel Margin="0,0,0,45" Height="374">
+                    <Label Margin="20" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Ajouter un produit</Label>
+                    <TextBlock TextWrapping="Wrap" Text="Nom du produit" Margin="150,0,150,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding NomProduitProperty, Mode=OneWay}" Margin="150,0,150,0" />
+                    <TextBlock TextWrapping="Wrap" Text="Descritpion du produit" Margin="150,10,150,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding DescriptionProduitProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBlock Margin="150,10,150,0" Text="Image du produit" TextWrapping="Wrap"/>
+                    <Image x:Name="___Aucun_nom_" Height="38" Margin="150,0,150,0" />
+                    <TextBlock TextWrapping="Wrap" Text="Prix du produit" Margin="150,0,150,0"/>
+                    <TextBox Name ="PrixProduit" Text="{Binding PrixProduitProperty, Mode=OneWay}" Margin="150,0,500,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Catégorie du produit" Margin="150,10,150,0"/>
+                    <ComboBox Margin="150,0">
+                        <ComboBoxItem>Catégorie 1</ComboBoxItem>
+                        <ComboBoxItem>Catégorie 2</ComboBoxItem>
+                    </ComboBox>
+                    <Button Margin="150,10,150,10" RenderTransformOrigin="0.5,0.5" Content="Ajouter le produit"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Créer une enchère en ligne">
+                <StackPanel Height="372" >
+                    <Label FontSize="30" HorizontalAlignment="Center" Margin="20">Créer une enchère</Label>
+                    <TextBlock TextWrapping="Wrap" Text="Nom de l'enchère" Margin="150,0,150,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding NomEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Date de l'enchère" Margin="150,10,150,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding DateEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Lieux de l'enchère" Margin="150,10,150,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding LieuxEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Categorie de l'enchère" Margin="150,10,150,0"/>
+                    <ComboBox Margin="150,0">
+                        <ComboBoxItem>Catégorie 1</ComboBoxItem>
+                        <ComboBoxItem>Catégorie 2</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock TextWrapping="Wrap" Text="Date de l'enchère" Margin="150,10,150,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding DateEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <Button Margin="150,10,150,10" >Ajouter le produit</Button>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Listes des enchères">
+                <StackPanel>
+                    <Label Margin="10" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Listes des enchères</Label>
+                    <Grid HorizontalAlignment="Center">
+                        <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Top" Name="listeEnchere">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Numéro" Binding="{Binding idProduitProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Nom du produit" Binding="{Binding nomProduitProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Prix actuel" Binding="{Binding prixProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Choix" Binding="{Binding choixProperty, Mode=OneWay}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Listes des dépots">
+                <StackPanel>
+                    <Label Margin="4" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Listes des dépots</Label>
+                    <Grid HorizontalAlignment="Center">
+                        <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Etat" Binding="{Binding EtatProduitProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Descriptif" Binding="{Binding DescriptifProduitProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Propriétaire" Binding="{Binding ProprietaireProduitProperty, Mode=OneWay}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Listes des demandes d'estimations">
+                <StackPanel>
+                    <Label Margin="5" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Listes des demandes d'estimations</Label>
+                    <Grid HorizontalAlignment="Center" >
+                        <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Date" Binding="{Binding dateEstimationProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding nomClientEstimationProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Adresse" Binding="{Binding adresseEstimationProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Telephone" Binding="{Binding telephoneEstimationProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Description de l'objet" Binding="{Binding desscriptionObjetEstimationProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Choix" Binding="{Binding choixEstimationProperty, Mode=OneWay}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Archives des ventes">
+                <StackPanel>
+                    <Label FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Archives</Label>
+                    <Grid HorizontalAlignment="Center" >
+                        <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Produit" Binding="{Binding produitArchiveProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Mode de paiement" Binding="{Binding paiementArchiveProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Acheteur" Binding="{Binding acheteurArchiveProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Vendeur" Binding="{Binding vendeurEstimationProperty, Mode=OneWay}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Window>
