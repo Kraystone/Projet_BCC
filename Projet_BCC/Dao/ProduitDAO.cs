@@ -18,11 +18,11 @@ namespace Projet_BCC
             this.EstimationDao = estimation;
             this.idCategorieDao = idCategorie;
         }
-        public ProduitDAO(int id, string nom, string description, int estimation)
+        public ProduitDAO(int id, string nom, int categorie, int estimation)
         {
             this.idProduitDao = id;
             this.NomDao = nom;
-            this.DescriptionDao = description;
+            this.idCategorieDao = categorie;
             this.EstimationDao = estimation;
         }
         public ProduitDAO(string nom)

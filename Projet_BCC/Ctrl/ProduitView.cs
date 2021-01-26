@@ -38,5 +38,10 @@
             get { return EstimationView; }
             set => EstimationView = value; 
         }
+        public int categorieProperty
+        {
+            get { return EstimationView; }
+            set => EstimationView = value; 
+        }
     }
 }

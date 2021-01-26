@@ -18,7 +18,7 @@ namespace Projet_BCC
         }
         public static void insertProduit(ProduitView produit)
         {
-            ProduitDAO.insertProduit(new ProduitDAO(produit.idProduitProperty, produit.nomProduitProperty, produit.descriptionProduitProperty, produit.prixProperty));
+            ProduitDAO.insertProduit(new ProduitDAO(produit.idProduitProperty, produit.nomProduitProperty, produit.categorieProperty, produit.prixProperty));
         }
         public static ObservableCollection<ProduitView> listesProduit()
         {

@@ -73,7 +73,7 @@ namespace Projet_BCC
 
                 while (reader.Read())
                 {
-                    ProduitDAO product = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3));
+                    ProduitDAO product = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
                     liste.Add(product);
                 }
             }

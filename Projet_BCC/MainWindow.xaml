@@ -75,7 +75,9 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding idProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Nom du produit" Binding="{Binding nomProduitProperty, Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Prix actuel" Binding="{Binding prixProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Description du produit" Binding="{Binding descriptionProduitProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Categorie du produit" Binding="{Binding categorieProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Estimation" Binding="{Binding prixProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Choix" Binding="{Binding choixProperty, Mode=OneWay}"/>
                             </DataGrid.Columns>
                         </DataGrid>
