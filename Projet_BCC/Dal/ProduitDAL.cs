@@ -79,11 +79,10 @@ namespace Projet_BCC
             }
             catch (Exception execpt)
             {
-                MessageBox.Show("Il y a un soucis avec la table Produit : {0}", execpt.StackTrace);
+                MessageBox.Show("Il y a un soucis avec la table Produit : ", execpt.StackTrace);
             }
             reader.Close();
             return liste;
         }
     }
 }
-   

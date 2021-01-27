@@ -8,8 +8,8 @@ namespace Projet_BCC
         {
             ProduitDAO produit = ProduitDAO.getProduit(idProduit);
             int idCategorie = produit.idCategorieDao;
-            CategorieView categorieView = CategorieORM.getCategorie(idProduit);
-            ProduitView produitView = new ProduitView(produit.NomDao);
+            CategorieView categorieView = CategorieORM.getCategorie(idCategorie);
+            ProduitView produitView = new ProduitView(produit.idProduitDao, produit.NomDao, produit.EstimationDao, categorieView);
             return produitView;
         }
         public static void updateProduit(ProduitView produit)

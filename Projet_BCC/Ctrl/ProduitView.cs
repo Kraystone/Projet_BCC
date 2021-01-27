@@ -1,4 +1,7 @@
-﻿namespace Projet_BCC
+﻿using System;
+using System.ComponentModel;
+
+namespace Projet_BCC
 {
     public class ProduitView
     {
@@ -17,15 +20,15 @@
             this.prixProperty = estimation;
             this.CategorieProduitView = categorie;
         }
-        public ProduitView(string nom)
-        {
-            this.NomView = nom;
-        }
 
         public string nomProduitProperty
         {
             get { return NomView; }
-            set => NomView = value.ToUpper();
+            set
+            {
+                NomView = value.ToUpper();
+                OnPropertyChanged("nomProduitProperty");
+            }
         }
         public string descriptionProduitProperty
         {
@@ -42,6 +45,22 @@
         {
             get { return EstimationView; }
             set => EstimationView = value; 
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string info)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(info));
+                this.PropertyChanged(this, new PropertyChangedEventArgs(info));
+                if ((info != "prixProperty"))
+                {
+                    ProduitORM.updateProduit(this);
+                }
+            }
         }
     }
 }
