@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projet_BCC"
         mc:Ignorable="d"
-        Title="BCC" 
-        WindowState="Maximized"
-        WindowStyle="None">
+        Title="BitCardCoin" Height="450" Width="800">
     <StackPanel>
         <TabControl>
             <TabItem Header="Page de Garde">

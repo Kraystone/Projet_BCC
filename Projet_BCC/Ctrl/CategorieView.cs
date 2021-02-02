@@ -11,6 +11,7 @@ namespace Projet_BCC
             this.idCategorieView = id;
             this.nomView = nom;
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string info)
@@ -21,6 +22,11 @@ namespace Projet_BCC
                 handler(this, new PropertyChangedEventArgs(info));
                 CategorieORM.updateCategorie(this);
             }
+        }
+        public string nom
+        {
+            get { return nomView; }
+            set => nomView = value;
         }
     }
 }

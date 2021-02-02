@@ -4,11 +4,9 @@
     <projectFile>Projet_BCC/Projet_BCC.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48a427da-d624-41a6-bf5a-75b5c1d40af0" name="Default Changelist" comment="Message d'erreur DAL mais compilation, on est content">
+    <list default="true" id="48a427da-d624-41a6-bf5a-75b5c1d40af0" name="Default Changelist" comment="some adjustement">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projet_BCC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projet_BCC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet_BCC/Ctrl/ProduitView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/Ctrl/ProduitView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/Dal/ProduitDAL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/Dal/ProduitDAL.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet_BCC/Orm/ProduitORM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/Orm/ProduitORM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC.exe" afterDir="false" />
@@ -32,8 +30,9 @@
       <option value="$PROJECT_DIR$/Projet_BCC/Dao/ProduitDAO.cs" />
       <option value="$PROJECT_DIR$/Projet_BCC/MainWindow.xaml.cs" />
       <option value="$PROJECT_DIR$/Projet_BCC/Orm/ProduitORM.cs" />
-      <option value="$PROJECT_DIR$/Projet_BCC/Dal/ProduitDAL.cs" />
       <option value="$PROJECT_DIR$/Projet_BCC/Ctrl/ProduitView.cs" />
+      <option value="$PROJECT_DIR$/Projet_BCC/Ctrl/CategorieView.cs" />
+      <option value="$PROJECT_DIR$/Projet_BCC/Dal/ProduitDAL.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mqgO2OgyKmxZiPcJHsgw2YFLrs" />
@@ -94,7 +93,10 @@
       <workItem from="1611486338639" duration="631000" />
       <workItem from="1611515124491" duration="3881000" />
       <workItem from="1611698868352" duration="2947000" />
-      <workItem from="1611776059455" duration="5926000" />
+      <workItem from="1611776059455" duration="5972000" />
+      <workItem from="1612191859474" duration="178000" />
+      <workItem from="1612192198232" duration="4097000" />
+      <workItem from="1612270868108" duration="1271000" />
     </task>
     <task id="LOCAL-00001" summary="Message d'erreur DAL mais compilation, on est content">
       <created>1611701199278</created>
@@ -110,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611701218924</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="some adjustement">
+      <created>1611783356724</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611783356724</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +143,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Message d'erreur DAL mais compilation, on est content" />
-    <option name="LAST_COMMIT_MESSAGE" value="Message d'erreur DAL mais compilation, on est content" />
+    <MESSAGE value="some adjustement" />
+    <option name="LAST_COMMIT_MESSAGE" value="some adjustement" />
   </component>
 </project>

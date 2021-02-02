@@ -18,6 +18,7 @@ namespace Projet_BCC
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
             ProduitDAO produit = new  ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4));
+            reader.Close();
             return produit;
         }
         public static void updateNomProduit(ProduitDAO produit)
@@ -66,21 +67,15 @@ namespace Projet_BCC
             string query = "SELECT * from produit;";
             MySqlCommand cmd = new MySqlCommand(query, ConnectionDAL.OpenConnection());
             MySqlDataReader reader = null;
-            try
-            {
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    ProduitDAO product = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
-                    liste.Add(product);
-                }
-            }
-            catch (Exception execpt)
-            {
-                MessageBox.Show("Il y a un soucis avec la table Produit : ", execpt.StackTrace);
-            }
+           cmd.ExecuteNonQuery();
+           reader = cmd.ExecuteReader();
+
+           while (reader.Read())
+           {
+               ProduitDAO product = new ProduitDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4));
+               liste.Add(product);
+           }
             reader.Close();
             return liste;
         }

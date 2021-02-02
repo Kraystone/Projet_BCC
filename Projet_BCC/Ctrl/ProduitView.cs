@@ -5,6 +5,7 @@ namespace Projet_BCC
 {
     public class ProduitView
     {
+        private int idProduitView;
         private string NomView;
         private string DescriptionView;
         private int EstimationView;
@@ -13,12 +14,13 @@ namespace Projet_BCC
         public ProduitView() { }
 
 
-        public ProduitView(int id, string nom, int estimation, CategorieView categorie)
+        public ProduitView(int id, string nom, string description, int estimation, CategorieView categorie)
         { 
             this.nomProduitProperty = nom;
             this.idProduitProperty = id;
             this.prixProperty = estimation;
             this.CategorieProduitView = categorie;
+            this.DescriptionView = description;
         }
 
         public string nomProduitProperty
@@ -35,16 +37,20 @@ namespace Projet_BCC
             get { return DescriptionView; }
             set => DescriptionView = value;
         }
-        public int idProduitProperty { get; set; }
+        public int idProduitProperty 
+        {
+            get { return idProduitView; }
+            set => idProduitView = value;
+        }
         public int prixProperty 
         {
             get { return EstimationView; }
             set => EstimationView = value; 
         }
-        public int categorieProperty
+        public CategorieView categorieProperty
         {
-            get { return EstimationView; }
-            set => EstimationView = value; 
+            get { return CategorieProduitView; }
+            set => CategorieProduitView = value; 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -9,16 +9,16 @@ namespace Projet_BCC
             ProduitDAO produit = ProduitDAO.getProduit(idProduit);
             int idCategorie = produit.idCategorieDao;
             CategorieView categorieView = CategorieORM.getCategorie(idCategorie);
-            ProduitView produitView = new ProduitView(produit.idProduitDao, produit.NomDao, produit.EstimationDao, categorieView);
+            ProduitView produitView = new ProduitView(produit.idProduitDao, produit.NomDao, produit.DescriptionDao, produit.EstimationDao, categorieView);
             return produitView;
         }
         public static void updateProduit(ProduitView produit)
         {
-            ProduitDAO.updateNomProduit(new ProduitDAO(produit.nomProduitProperty));
+           // ProduitDAO.updateNomProduit(new ProduitDAO(produit.nomProduitProperty));
         }
         public static void insertProduit(ProduitView produit)
         {
-            ProduitDAO.insertProduit(new ProduitDAO(produit.idProduitProperty, produit.nomProduitProperty, produit.categorieProperty, produit.prixProperty));
+            //ProduitDAO.insertProduit(new ProduitDAO(produit.idProduitProperty, produit.nomProduitProperty, produit.categorieProperty, produit.prixProperty));
         }
         public static ObservableCollection<ProduitView> listesProduit()
         {
@@ -28,7 +28,7 @@ namespace Projet_BCC
             {
                 int idCategorie = product.idCategorieDao;
                 CategorieView viewCategorie = CategorieORM.getCategorie(idCategorie);
-                ProduitView produitView = new ProduitView(product.idCategorieDao, product.NomDao, product.EstimationDao, viewCategorie);
+                ProduitView produitView = new ProduitView(product.idCategorieDao, product.NomDao, product.DescriptionDao, product.EstimationDao, viewCategorie);
                 viewProduit.Add(produitView);
             }
             return viewProduit;

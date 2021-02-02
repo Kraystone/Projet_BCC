@@ -18,17 +18,7 @@ namespace Projet_BCC
             this.EstimationDao = estimation;
             this.idCategorieDao = idCategorie;
         }
-        public ProduitDAO(int id, string nom, int categorie, int estimation)
-        {
-            this.idProduitDao = id;
-            this.NomDao = nom;
-            this.idCategorieDao = categorie;
-            this.EstimationDao = estimation;
-        }
-        public ProduitDAO(string nom)
-        {
-            this.NomDao = nom;
-        }
+        
         public static ProduitDAO getProduit(int idProduit)
         {
             ProduitDAO produit = ProduitDAL.getProduit(idProduit);
