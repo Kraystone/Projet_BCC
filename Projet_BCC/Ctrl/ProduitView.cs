@@ -52,7 +52,6 @@ namespace Projet_BCC
             get { return CategorieProduitView; }
             set => CategorieProduitView = value; 
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string info)
@@ -62,7 +61,7 @@ namespace Projet_BCC
             {
                 handler(this, new PropertyChangedEventArgs(info));
                 this.PropertyChanged(this, new PropertyChangedEventArgs(info));
-                if ((info != "prixProperty"))
+                if ((info != "descriptionProduitProperty"))
                 {
                     ProduitORM.updateProduit(this);
                 }

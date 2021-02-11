@@ -28,5 +28,10 @@ namespace Projet_BCC
             get { return nomView; }
             set => nomView = value;
         }
+        public int categorieProperty
+        {
+            get { return categorieProperty; }
+            set => categorieProperty = value;
+        }
     }
 }

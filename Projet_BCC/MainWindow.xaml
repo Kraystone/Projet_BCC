@@ -15,66 +15,55 @@
                         <ColumnDefinition Width="239*"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="Images/logoBCC.png" Margin="450,144,450,1704"  Grid.ColumnSpan="2"/>
-                    <TextBlock Name="descritpion"  Margin="45,772,45,1388" TextWrapping="Wrap" Grid.ColumnSpan="2" FontSize="18">
-                Consultez les annonces de ventes classées par catégories ou recherchez par mot-clé un artiste, un style ou un objet.<LineBreak />
-                Notre moteur de recherche permet de filtrer selon plusieurs critères :<LineBreak />
-                <LineBreak />
-                - Les régions, <LineBreak />
-                - Date de vente, <LineBreak />
-                - Estimation <LineBreak />
-                <LineBreak />
-                Et pour ne rien rater des ventes, BidCardCoin vous propose un service gratuit d’alertes par e-mail qui se déclenchent par mots-clés et vous informe automatiquement dès que le lot convoité est proposé aux enchères.
-                    </TextBlock>
+                    <TextBlock x:Name="descritpion"  Margin="45,772,45,1388" TextWrapping="Wrap" Grid.ColumnSpan="2" FontSize="18"><Run Text="Consultez les annonces de ventes classées par catégories ou recherchez par mot-clé un artiste, un style ou un objet."/><LineBreak /><Run Text="Notre moteur de recherche permet de filtrer selon plusieurs critères :"/><LineBreak /><LineBreak /><Run Text="- Les régions,"/><LineBreak /><Run Text="- Date de vente,"/><LineBreak /><Run Text="- Estimation"/><LineBreak /><LineBreak /><Run Text="Et pour ne rien rater des ventes, BidCardCoin vous propose un service gratuit d'alertes par e-mail qui se déclenchent par mots-clés et vous informe automatiquement dès que le lot convoité est proposé aux enchères."/></TextBlock>
                 </Grid>
             </TabItem>
             <TabItem Header="Ajouter un produit">
                 <StackPanel Margin="0,0,0,45" Height="374">
-                    <Label Margin="20" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Ajouter un produit</Label>
+                    <Label Margin="20" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Ajouter un produit"/>
                     <TextBlock TextWrapping="Wrap" Text="Nom du produit" Margin="150,0,150,0"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding NomProduitProperty, Mode=OneWay}" Margin="150,0,150,0" />
+                    <TextBox x:Name="nomEnchereAjout" Height="23" TextWrapping="Wrap" Text="{Binding NomProduitProperty, Mode=OneWay}" Margin="150,0,150,0" />
                     <TextBlock TextWrapping="Wrap" Text="Descritpion du produit" Margin="150,10,150,0"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding DescriptionProduitProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBox x:Name="desProduitAjout" Height="23" TextWrapping="Wrap" Text="{Binding DescriptionProduitProperty, Mode=OneWay}" Margin="150,0,150,0"/>
                     <TextBlock Margin="150,10,150,0" Text="Image du produit" TextWrapping="Wrap"/>
-                    <Image x:Name="___Aucun_nom_" Height="38" Margin="150,0,150,0" />
+                    <Image x:Name="imageAjout" Height="38" Margin="150,0,150,0" />
                     <TextBlock TextWrapping="Wrap" Text="Prix du produit" Margin="150,0,150,0"/>
-                    <TextBox Name ="PrixProduit" Text="{Binding PrixProduitProperty, Mode=OneWay}" Margin="150,0,500,0"/>
+                    <TextBox x:Name ="prixProduitAjout" Text="{Binding PrixProduitProperty, Mode=OneWay}" Margin="150,0,500,0"/>
                     <TextBlock TextWrapping="Wrap" Text="Catégorie du produit" Margin="150,10,150,0"/>
                     <ComboBox Margin="150,0">
-                        <ComboBoxItem>Catégorie 1</ComboBoxItem>
-                        <ComboBoxItem>Catégorie 2</ComboBoxItem>
+                        <ComboBoxItem Content="Catégorie 1"/>
+                        <ComboBoxItem Content="Catégorie 2"/>
                     </ComboBox>
-                    <Button Margin="150,10,150,10" RenderTransformOrigin="0.5,0.5" Content="Ajouter le produit"/>
+                    <Button Margin="150,10,150,10" RenderTransformOrigin="0.5,0.5" Content="Ajouter le produit" Click="ajoutProduit"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Créer une enchère en ligne">
                 <StackPanel Height="372" >
-                    <Label FontSize="30" HorizontalAlignment="Center" Margin="20">Créer une enchère</Label>
+                    <Label FontSize="30" HorizontalAlignment="Center" Margin="20" Content="Créer une enchère"/>
                     <TextBlock TextWrapping="Wrap" Text="Nom de l'enchère" Margin="150,0,150,0"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding NomEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBox x:Name="nomEnchereTB" Height="23" TextWrapping="Wrap" Text="{Binding NomEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
                     <TextBlock TextWrapping="Wrap" Text="Date de l'enchère" Margin="150,10,150,0"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding DateEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <DatePicker Height="25" HorizontalAlignment="Left" Margin="150,0,0,0" x:Name="dateProduitAjout" VerticalAlignment="Top" Width="156" />
                     <TextBlock TextWrapping="Wrap" Text="Lieux de l'enchère" Margin="150,10,150,0"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding LieuxEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBox x:Name="lieuxEnchereTB" Height="23" TextWrapping="Wrap" Text="{Binding LieuxEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
                     <TextBlock TextWrapping="Wrap" Text="Categorie de l'enchère" Margin="150,10,150,0"/>
                     <ComboBox Margin="150,0">
-                        <ComboBoxItem>Catégorie 1</ComboBoxItem>
-                        <ComboBoxItem>Catégorie 2</ComboBoxItem>
+                        <ComboBoxItem Content="Catégorie 1"/>
+                        <ComboBoxItem Content="Catégorie 2"/>
                     </ComboBox>
-                    <TextBlock TextWrapping="Wrap" Text="Date de l'enchère" Margin="150,10,150,0"/>
-                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding DateEnchereProperty, Mode=OneWay}" Margin="150,0,150,0"/>
-                    <Button Margin="150,10,150,10" >Ajouter le produit</Button>
+                    <Button Margin="150,10,150,10" Content="Ajouter le produit" />
                 </StackPanel>
             </TabItem>
             <TabItem Header="Listes des enchères">
                 <StackPanel>
-                    <Label Margin="10" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Listes des enchères</Label>
+                    <Label Margin="10" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Listes des enchères"/>
                     <Grid HorizontalAlignment="Center">
-                        <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Top" Name="listeEnchere">
+                        <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Top" x:Name="listeEnchere">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding idProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Nom du produit" Binding="{Binding nomProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Description du produit" Binding="{Binding descriptionProduitProperty, Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Categorie du produit" Binding="{Binding categorieProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Categorie du produit" Binding="{Binding categorieProperty.libCategorie, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Estimation" Binding="{Binding prixProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Choix" Binding="{Binding choixProperty, Mode=OneWay}"/>
                             </DataGrid.Columns>
@@ -84,7 +73,7 @@
             </TabItem>
             <TabItem Header="Listes des dépots">
                 <StackPanel>
-                    <Label Margin="4" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Listes des dépots</Label>
+                    <Label Margin="4" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Listes des dépots"/>
                     <Grid HorizontalAlignment="Center">
                         <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
@@ -98,16 +87,16 @@
             </TabItem>
             <TabItem Header="Listes des demandes d'estimations">
                 <StackPanel>
-                    <Label Margin="5" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Listes des demandes d'estimations</Label>
+                    <Label Margin="5" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Listes des demandes d'estimations"/>
                     <Grid HorizontalAlignment="Center" >
                         <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Date" Binding="{Binding dateEstimationProperty, Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Nom" Binding="{Binding nomClientEstimationProperty, Mode=OneWay}" />
-                                <DataGridTextColumn Header="Adresse" Binding="{Binding adresseEstimationProperty, Mode=OneWay}" />
-                                <DataGridTextColumn Header="Telephone" Binding="{Binding telephoneEstimationProperty, Mode=OneWay}" />
-                                <DataGridTextColumn Header="Description de l'objet" Binding="{Binding desscriptionObjetEstimationProperty, Mode=OneWay}" />
-                                <DataGridTextColumn Header="Choix" Binding="{Binding choixEstimationProperty, Mode=OneWay}" />
+                                <DataGridTextColumn Header="Date" Binding="{Binding dateEstimationProperty, Mode=TwoWay}"/>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding nomClientEstimationProperty, Mode=TwoWay}" />
+                                <DataGridTextColumn Header="Adresse" Binding="{Binding adresseEstimationProperty, Mode=TwoWay}" />
+                                <DataGridTextColumn Header="Telephone" Binding="{Binding telephoneEstimationProperty, Mode=TwoWay}" />
+                                <DataGridTextColumn Header="Description de l'objet" Binding="{Binding desscriptionObjetEstimationProperty, Mode=TwoWay}" />
+                                <DataGridTextColumn Header="Choix" Binding="{Binding choixEstimationProperty, Mode=TwoWay}" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
@@ -115,7 +104,7 @@
             </TabItem>
             <TabItem Header="Archives des ventes">
                 <StackPanel>
-                    <Label FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center">Archives</Label>
+                    <Label FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Archives"/>
                     <Grid HorizontalAlignment="Center" >
                         <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
