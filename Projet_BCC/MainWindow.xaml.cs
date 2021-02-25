@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Controls;
+using System;
 
 namespace Projet_BCC
 {
@@ -9,42 +11,77 @@ namespace Projet_BCC
     /// </summary>
     public partial class MainWindow : Window
     {
+        ProduitView dataProduit;
+        CategorieView dataCategorie;
         ObservableCollection<ProduitView> listProduit;
-        ProduitView data;
+        ObservableCollection<CategorieView> listCategorie;
+        ObservableCollection<CategorieProduitView> listCategorieProduit2;
+
         int index = 0;
+
         public MainWindow()
         {
             InitializeComponent();
             ConnectionDAL.OpenConnection();
             loadProduct();
+            loadCategorie();
+            loadContexte();
+
+            listCategorieProduit2 = CategorieProduitORM.getCategorieProduitORM(2);
+
+            
         }
         void loadProduct()
         {
             listProduit = ProduitORM.listesProduit();
-            data = new ProduitView();
+            dataProduit = new ProduitView();
             listeEnchere.ItemsSource = listProduit;
+        }
+
+        void loadCategorie()
+        {
+            listCategorie = CategorieORM.listeCategoriesORM();
+            dataCategorie = new CategorieView();
         }
         private void ajoutProduit(object sender, RoutedEventArgs r)
         {
             //ajout d'un nouveau produit
-            data.idProduitProperty = ProduitDAL.getMaxId() + 1;
-            data.categorieProperty = new CategorieView(99, "Ajout");
+            dataProduit.idProduitProperty = ProduitDAL.getMaxId() + 1;
+            //dataProduit.categorieProperty = new CategorieView(dataProduit.idProduitProperty, dataProduit.);
 
-            //ajout du produit das la base
-            listProduit.Add(data);
-            ProduitORM.insertProduit(data);
+            //ajout du produit dans la base
+            listProduit.Add(dataProduit);
+            ProduitORM.insertProduit(dataProduit);
             index = listProduit.Count();
 
             //creation d'un nouveau produit
             listeEnchere.Items.Refresh();
-            data = new ProduitView();
+            dataProduit = new ProduitView();
 
             //on lit le nouveau produit aux élèments de la vue
-            //nomTextBox.DataContext = myDataObject;
-            nomEnchereAjout.DataContext = data;
-            desProduitAjout.DataContext = data;
-            prixProduitAjout.DataContext = data;
-            dateProduitAjout.DataContext = data;
+            nomEnchereAjout.DataContext = dataProduit;
+            desProduitAjout.DataContext = dataProduit;
+            prixProduitAjout.DataContext = dataProduit;
+            dateProduitAjout.DataContext = dataProduit;
+            imgProduitAjout.DataContext = dataProduit;
+            nomCategorieAjout.DataContext = dataProduit;
+        }
+        private void ajoutCategorie(object sender, RoutedEventArgs r)
+        {
+            dataCategorie.idCategorieProperty = CategorieDAL.getMaxIdCategorie() + 1;
+            
+            listCategorie.Add(dataCategorie);
+            CategorieORM.insertCategorie(dataCategorie);
+            dataCategorie = new CategorieView();
+
+            nomCategorieAjout.DataContext = dataCategorie;
+
+        }
+
+
+        void loadContexte()
+        {
+            nomCategorieAjout.DataContext = dataCategorie;
         }
     }
 }

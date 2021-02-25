@@ -1,22 +1,32 @@
-﻿namespace Projet_BCC
+﻿using System;
+using System.Collections.ObjectModel;
+
+namespace Projet_BCC
 {
     public class CategorieORM
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="idCategorie"></param>
-        /// <returns></returns>
-        /// 
         public static CategorieView getCategorie(int idCategorie)
         {
             CategorieDAO categorieDAO = CategorieDAO.getCategorie(idCategorie);
             CategorieView categorieView = new CategorieView(categorieDAO.idCategorieDao, categorieDAO.NomDao);
             return categorieView;
         }
-        public static void updateCategorie(CategorieView categorie)
+        public static void insertCategorie(CategorieView c)
         {
-            CategorieDAO.updateCategorie(new CategorieDAO(categorie.idCategorieView, categorie.nomView));
+            CategorieDAO.insertCategorie(new CategorieDAO(c.idCategorieView, c.nomView));
+        }
+
+        public static ObservableCollection<CategorieView> listeCategoriesORM()
+        {
+            ObservableCollection<CategorieDAO> listeDesCategoriesDAO = CategorieDAO.listeCategoriesDAO();
+            ObservableCollection<CategorieView> listeDesCategoriesView = new ObservableCollection<CategorieView>();
+
+            foreach (CategorieDAO categorie in listeDesCategoriesDAO)
+            {
+                CategorieView categorieView = new CategorieView(categorie.idCategorieDao, categorie.NomDao);
+                listeDesCategoriesView.Add(categorieView);
+            }
+            return listeDesCategoriesView;
         }
     }
 }

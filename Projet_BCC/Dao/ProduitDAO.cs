@@ -34,7 +34,7 @@ namespace Projet_BCC
         }
         public static ObservableCollection<ProduitDAO> listeProduits()
         {
-            ObservableCollection<ProduitDAO> liste = ProduitDAL.selectProduit();
+            ObservableCollection<ProduitDAO> liste = ProduitDAL.listProduitDAL();
             return liste;
         }
     }

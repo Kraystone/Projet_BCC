@@ -1,4 +1,7 @@
 ﻿
+using System;
+using System.Collections.ObjectModel;
+
 namespace Projet_BCC
 {
      public class CategorieDAO
@@ -17,9 +20,16 @@ namespace Projet_BCC
             CategorieDAO categorie = CategorieDAL.getCategorie(idCategorie);
             return categorie;
         }
-        public static void updateCategorie(CategorieDAO categorieDAO)
+
+        public static void insertCategorie(CategorieDAO categorieDAO)
         {
-            CategorieDAL.updateCategorie(categorieDAO.idCategorieDao, categorieDAO.NomDao);
+            Console.WriteLine("DAO INSERT:"+categorieDAO.NomDao);
+            CategorieDAL.insertCategorie(categorieDAO);
+        }
+        public static ObservableCollection<CategorieDAO> listeCategoriesDAO()
+        {
+            ObservableCollection<CategorieDAO> listeCategories = CategorieDAL.listCategorieDAL();
+            return listeCategories;
         }
     }
 }

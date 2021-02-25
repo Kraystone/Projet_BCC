@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projet_BCC"
         mc:Ignorable="d"
-        Title="BitCardCoin" Height="450" Width="800">
+        Title="BitCardCoin" Height="550" Width="800">
     <StackPanel>
         <TabControl>
             <TabItem Header="Page de Garde">
@@ -19,21 +19,23 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Ajouter un produit">
-                <StackPanel Margin="0,0,0,45" Height="374">
+                <StackPanel x:Name="panelAjout" Margin="0,0,0,45">
                     <Label Margin="20" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Ajouter un produit"/>
                     <TextBlock TextWrapping="Wrap" Text="Nom du produit" Margin="150,0,150,0"/>
-                    <TextBox x:Name="nomEnchereAjout" Height="23" TextWrapping="Wrap" Text="{Binding NomProduitProperty, Mode=OneWay}" Margin="150,0,150,0" />
+                    <TextBox Name="nomEnchereAjout" Height="23" TextWrapping="Wrap" Text="{Binding NomProduitProperty}" Margin="150,0,150,0" />
                     <TextBlock TextWrapping="Wrap" Text="Descritpion du produit" Margin="150,10,150,0"/>
-                    <TextBox x:Name="desProduitAjout" Height="23" TextWrapping="Wrap" Text="{Binding DescriptionProduitProperty, Mode=OneWay}" Margin="150,0,150,0"/>
+                    <TextBox x:Name="desProduitAjout" Height="23" TextWrapping="Wrap" Text="{Binding DescriptionProduitProperty}" Margin="150,0,150,0"/>
                     <TextBlock Margin="150,10,150,0" Text="Image du produit" TextWrapping="Wrap"/>
-                    <Image x:Name="imageAjout" Height="38" Margin="150,0,150,0" />
-                    <TextBlock TextWrapping="Wrap" Text="Prix du produit" Margin="150,0,150,0"/>
-                    <TextBox x:Name ="prixProduitAjout" Text="{Binding PrixProduitProperty, Mode=OneWay}" Margin="150,0,500,0"/>
+                    <TextBox x:Name="imgProduitAjout" Height="23" TextWrapping="Wrap" Text="{Binding ImgProduitProperty}" Margin="150,0,150,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="Prix du produit" Margin="150,10,150,0"/>
+                    <TextBox x:Name ="prixProduitAjout" Text="{Binding PrixProduitProperty}" Margin="150,0"/>
                     <TextBlock TextWrapping="Wrap" Text="Catégorie du produit" Margin="150,10,150,0"/>
                     <ComboBox Margin="150,0">
-                        <ComboBoxItem Content="Catégorie 1"/>
-                        <ComboBoxItem Content="Catégorie 2"/>
+                        <ComboBoxItem Content="{Binding nomCategorieAffichageProperty}"/>
                     </ComboBox>
+                    <TextBlock TextWrapping="Wrap" Text="Ajouter une categorie" Margin="150,10,150,0"/>
+                    <TextBox Name="nomCategorieAjout" Height="23" TextWrapping="Wrap" Margin="150,0,400,0" Text="{Binding nomCategorieAjoutProperty}" />
+                    <Button Margin="150,10,400,10" RenderTransformOrigin="0.5,0.5" Content="Ajouter la categorie" Click="ajoutCategorie"/>
                     <Button Margin="150,10,150,10" RenderTransformOrigin="0.5,0.5" Content="Ajouter le produit" Click="ajoutProduit"/>
                 </StackPanel>
             </TabItem>
@@ -62,7 +64,7 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding idProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Nom du produit" Binding="{Binding nomProduitProperty, Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Description du produit" Binding="{Binding descriptionProduitProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn x:Name="descriptionProduit" Header="Description du produit" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}"/>
                                 <DataGridTextColumn Header="Categorie du produit" Binding="{Binding categorieProperty.libCategorie, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Estimation" Binding="{Binding prixProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Choix" Binding="{Binding choixProperty, Mode=OneWay}"/>
@@ -77,9 +79,9 @@
                     <Grid HorizontalAlignment="Center">
                         <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Etat" Binding="{Binding EtatProduitProperty, Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Descriptif" Binding="{Binding DescriptifProduitProperty, Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Propriétaire" Binding="{Binding ProprietaireProduitProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="ID du depot" Binding="{Binding idDepotProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Vendue" Binding="{Binding vendueDepotProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Non vendue" Binding="{Binding nonVendueDepotProperty, Mode=OneWay}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>

@@ -61,7 +61,7 @@ namespace Projet_BCC
             reader.Close();
             return idMax;
         }
-        public static ObservableCollection<ProduitDAO> selectProduit()
+        public static ObservableCollection<ProduitDAO> listProduitDAL()
         {
             ObservableCollection<ProduitDAO> liste = new ObservableCollection<ProduitDAO>();
             string query = "SELECT * from produit;";

@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48a427da-d624-41a6-bf5a-75b5c1d40af0" name="Default Changelist" comment="some adjustement">
+      <change afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Projet_BCC/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Projet_BCC/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Projet_BCC/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Projet_BCC/v16/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Projet_BCC/v16/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Projet_BCC/v16/Server/sqlite3/storage.ide-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Projet_BCC/v16/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Projet_BCC/v16/Server/sqlite3/storage.ide-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet_BCC/Ctrl/ProduitView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/Ctrl/ProduitView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet_BCC/Orm/ProduitORM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/Orm/ProduitORM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/bin/Debug/Projet_BCC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/bin/Release/Projet_BCC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/bin/Release/Projet_BCC.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/bin/Release/Projet_BCC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/bin/Release/Projet_BCC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/DesignTimeResolveAssemblyReferences.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/MainWindow.baml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/MainWindow.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/MainWindow.g.i.cs" afterDir="false" />
@@ -23,6 +25,19 @@
       <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC.g.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC_MarkupCompile.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC_MarkupCompile.i.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC_MarkupCompile.i.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Debug/Projet_BCC_MarkupCompile.i.lref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/MainWindow.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/MainWindow.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/MainWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC_MarkupCompile.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC_MarkupCompile.lref" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_BCC/obj/Release/Projet_BCC_MarkupCompile.lref" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +125,7 @@
       <workItem from="1612192198232" duration="4097000" />
       <workItem from="1612270868108" duration="1271000" />
       <workItem from="1613053686005" duration="5000" />
+      <workItem from="1613397591109" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="Message d'erreur DAL mais compilation, on est content">
       <created>1611701199278</created>

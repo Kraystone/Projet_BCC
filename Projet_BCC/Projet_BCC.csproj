@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -109,12 +111,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Ctrl\categorieProduitView.cs" />
     <Compile Include="Ctrl\CategorieView.cs" />
     <Compile Include="Ctrl\ProduitView.cs" />
     <Compile Include="Dal\CategorieDAL.cs" />
+    <Compile Include="Dal\CategorieProduitDAL.cs" />
     <Compile Include="Dal\ConnectionDAL.cs" />
     <Compile Include="Dal\ProduitDAL.cs" />
     <Compile Include="Dao\CategorieDAO.cs" />
+    <Compile Include="Dao\CategorieProduitDAO.cs" />
     <Compile Include="Dao\ProduitDAO.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -123,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Orm\CategorieORM.cs" />
+    <Compile Include="Orm\CategorieProduitORM.cs" />
     <Compile Include="Orm\ProduitORM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
