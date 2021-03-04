@@ -28,5 +28,16 @@ namespace Projet_BCC
             reader.Close();
             return listeCategorieProduit;
         }
+        public static CategorieProduitDAO getCategorieProduitDAL(int idCategorie, int idProduit)
+        {
+            string query = "SELECT * FROM categorie_produit WHERE idCatégorie = \"" + idCategorie + "\" and idProduit=" + idProduit + ";";
+            MySqlCommand cmd = new MySqlCommand(query, ConnectionDAL.OpenConnection());
+            cmd.ExecuteNonQuery();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            CategorieProduitDAO categorieProduit = new CategorieProduitDAO(reader.GetInt32(0), reader.GetInt32(1));
+            reader.Close();
+            return categorieProduit;
+        }
     }
 }

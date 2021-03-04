@@ -23,7 +23,6 @@ namespace Projet_BCC
 
         public static void insertCategorie(CategorieDAO categorieDAO)
         {
-            Console.WriteLine("DAO INSERT:"+categorieDAO.NomDao);
             CategorieDAL.insertCategorie(categorieDAO);
         }
         public static ObservableCollection<CategorieDAO> listeCategoriesDAO()

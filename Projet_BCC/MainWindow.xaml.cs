@@ -13,11 +13,13 @@ namespace Projet_BCC
     {
         ProduitView dataProduit;
         CategorieView dataCategorie;
+        CategorieProduitView datacategorieProduit;
         ObservableCollection<ProduitView> listProduit;
         ObservableCollection<CategorieView> listCategorie;
-        ObservableCollection<CategorieProduitView> listCategorieProduit2;
+        ObservableCollection<ProduitView> listCategorieProduit2;
 
         int index = 0;
+        int selectedProduct = 0;
 
         public MainWindow()
         {
@@ -26,10 +28,7 @@ namespace Projet_BCC
             loadProduct();
             loadCategorie();
             loadContexte();
-
-            listCategorieProduit2 = CategorieProduitORM.getCategorieProduitORM(2);
-
-            
+            loadcategorieProduit();
         }
         void loadProduct()
         {
@@ -42,6 +41,11 @@ namespace Projet_BCC
         {
             listCategorie = CategorieORM.listeCategoriesORM();
             dataCategorie = new CategorieView();
+        }
+        void loadcategorieProduit()
+        {
+            listCategorieProduit2 = CategorieProduitORM.getCategorieDUProduitORM(2);
+            datacategorieProduit = new CategorieProduitView();
         }
         private void ajoutProduit(object sender, RoutedEventArgs r)
         {
@@ -75,13 +79,23 @@ namespace Projet_BCC
             dataCategorie = new CategorieView();
 
             nomCategorieAjout.DataContext = dataCategorie;
-
         }
-
 
         void loadContexte()
         {
             nomCategorieAjout.DataContext = dataCategorie;
+        }
+
+        private void estimationChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            //dataProduit.prixProperty = prixTB.Text;
+        }
+        private void listeEnchereChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((listeEnchere.SelectedIndex < listProduit.Count) && listeEnchere.SelectedIndex >= 0)
+            {
+                selectedProduct = listProduit.ElementAt<ProduitView>(listeEnchere.SelectedIndex).idProduitProperty;
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Projet_BCC
             nomCategorieView = nom;
         }
 
-        public string nomCategorieAjoutProperty
+        public string categorieProperty
         {
             get { return nomCategorieView; }
         }

@@ -24,9 +24,9 @@ namespace Projet_BCC
             ProduitDAO produit = ProduitDAL.getProduit(idProduit);
             return produit;
         }
-        public static void updateNomProduit(ProduitDAO produit)
+        public static void updatePrixProduit(ProduitDAO produit)
         {
-            ProduitDAL.updateNomProduit(produit);
+            ProduitDAL.updatePrixProduit(produit);
         }
         public static void insertProduit(ProduitDAO produit)
         {

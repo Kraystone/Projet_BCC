@@ -12,7 +12,7 @@ namespace Projet_BCC
         private CategorieView CategorieProduitView;
 
         public ProduitView() { }
-
+        
 
         public ProduitView(int id, string nom, string description, int estimation, CategorieView categorie)
         { 
@@ -26,11 +26,7 @@ namespace Projet_BCC
         public string nomProduitProperty
         {
             get { return NomView; }
-            set
-            {
-                NomView = value.ToUpper();
-                OnPropertyChanged("nomProduitProperty");
-            }
+            set => NomView = value;
         }
         public string descriptionProduitProperty
         {
@@ -45,7 +41,11 @@ namespace Projet_BCC
         public int prixProperty 
         {
             get { return EstimationView; }
-            set => EstimationView = value; 
+            set
+            {
+                EstimationView = value;
+                OnPropertyChanged("prixProperty");
+            }
         }
         public CategorieView categorieProperty
         {
@@ -61,7 +61,7 @@ namespace Projet_BCC
             {
                 handler(this, new PropertyChangedEventArgs(info));
                 this.PropertyChanged(this, new PropertyChangedEventArgs(info));
-                if ((info != "descriptionProduitProperty"))
+                if ((info != "prixProperty"))
                 {
                     ProduitORM.updateProduit(this);
                 }

@@ -9,17 +9,23 @@ namespace Projet_BCC
 {
     class CategorieProduitORM
     {
-        public static ObservableCollection<CategorieProduitView> getCategorieProduitORM(int idProduit)
+        public static ObservableCollection<ProduitView> getCategorieDUProduitORM(int idProduit)
         {
             ObservableCollection<CategorieProduitDAO> listeCategorieProduitORM = CategorieProduitDAO.getCategorieProduitDAO(idProduit);
-            ObservableCollection<CategorieProduitView> listeCategorieProduitViews = new ObservableCollection<CategorieProduitView>();
+            ObservableCollection<ProduitView> listeProduitViews = new ObservableCollection<ProduitView>();
 
             foreach(CategorieProduitDAO categorie in listeCategorieProduitORM)
             {
-                CategorieProduitView categorieProduitView = new CategorieProduitView(categorie.NomCategorieDao);
-                listeCategorieProduitViews.Add(categorieProduitView); 
+                ProduitView ProduitView = new ProduitView();
+                listeProduitViews.Add(ProduitView); 
             }
-            return listeCategorieProduitViews;
+            return listeProduitViews;
+        }
+        public static CategorieProduitView getCategorieProduit(int idCategorie, int idProduit)
+        {
+            CategorieProduitDAO produitCategorie = CategorieProduitDAO.getCategorieProduitDAO(idCategorie, idProduit);
+            CategorieProduitView categorieProduit = new CategorieProduitView(produitCategorie.idProduitDAO, produitCategorie.idCategorieDao);
+            return categorieProduit;
         }
     }
 }

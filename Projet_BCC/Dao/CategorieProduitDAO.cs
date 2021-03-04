@@ -20,11 +20,21 @@ namespace Projet_BCC
         {
             this.NomCategorieDao = nom;
         }
+        public CategorieProduitDAO(int idProduit, int idCategorie)
+        {
+            this.idProduitDAO = idProduit;
+            this.idCategorieDao = idCategorie;
+        }
 
         public static ObservableCollection<CategorieProduitDAO> getCategorieProduitDAO(int idProduit)
         {
             ObservableCollection<CategorieProduitDAO> listeCategorieProduit = CategorieProduitDAL.GetCategorieProduitDAL(idProduit);
             return listeCategorieProduit;
+        }
+        public static CategorieProduitDAO getCategorieProduitDAO(int idCategorie, int idProduit)
+        {
+            CategorieProduitDAO produit = CategorieProduitDAL.getCategorieProduitDAL(idCategorie, idProduit);
+            return produit;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Projet_BCC
         }
         public static void updateProduit(ProduitView produit)
         {
-            ProduitDAO.updateNomProduit(new ProduitDAO(produit.idProduitProperty, produit.nomProduitProperty, produit.descriptionProduitProperty, produit.prixProperty, produit.categorieProperty.idCategorieView));
+            ProduitDAO.updatePrixProduit(new ProduitDAO(produit.idProduitProperty, produit.nomProduitProperty, produit.descriptionProduitProperty, produit.prixProperty, produit.categorieProperty.idCategorieView));
         }
         public static void insertProduit(ProduitView produit)
         {

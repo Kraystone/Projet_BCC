@@ -21,9 +21,9 @@ namespace Projet_BCC
             reader.Close();
             return produit;
         }
-        public static void updateNomProduit(ProduitDAO produit)
+        public static void updatePrixProduit(ProduitDAO produit)
         {
-            string query = "UPDATE produit set Nom=\"" + produit.NomDao + ";";
+            string query = "UPDATE produit set Estimation=\"" + produit.EstimationDao + ";";
             MySqlCommand cmd = new MySqlCommand(query, ConnectionDAL.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

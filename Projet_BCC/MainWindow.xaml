@@ -60,13 +60,13 @@
                 <StackPanel>
                     <Label Margin="10" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Listes des enchères"/>
                     <Grid HorizontalAlignment="Center">
-                        <DataGrid AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Top" x:Name="listeEnchere">
+                        <DataGrid SelectionChanged="listeEnchereChanged" ItemsSource="{Binding}" AutoGenerateColumns="False" BorderBrush="Black" Background="Gray" Height="300" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Top" Name="listeEnchere">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding idProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Nom du produit" Binding="{Binding nomProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn x:Name="descriptionProduit" Header="Description du produit" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}"/>
-                                <DataGridTextColumn Header="Categorie du produit" Binding="{Binding categorieProperty.libCategorie, Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Estimation" Binding="{Binding prixProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Categorie du produit" Binding="{Binding categorieProperty, Mode=OneWay}"/>
+                                <DataGridTextColumn x:Name="prixTB" Header="Estimation" Binding="{Binding prixProperty, Mode=TwoWay}"/>
                                 <DataGridTextColumn Header="Choix" Binding="{Binding choixProperty, Mode=OneWay}"/>
                             </DataGrid.Columns>
                         </DataGrid>
@@ -97,7 +97,7 @@
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomClientEstimationProperty, Mode=TwoWay}" />
                                 <DataGridTextColumn Header="Adresse" Binding="{Binding adresseEstimationProperty, Mode=TwoWay}" />
                                 <DataGridTextColumn Header="Telephone" Binding="{Binding telephoneEstimationProperty, Mode=TwoWay}" />
-                                <DataGridTextColumn Header="Description de l'objet" Binding="{Binding desscriptionObjetEstimationProperty, Mode=TwoWay}" />
+                                <DataGridTextColumn Header="Description de l'objet" Binding="{Binding descriptionObjetEstimationProperty, Mode=TwoWay}" />
                                 <DataGridTextColumn Header="Choix" Binding="{Binding choixEstimationProperty, Mode=TwoWay}" />
                             </DataGrid.Columns>
                         </DataGrid>
