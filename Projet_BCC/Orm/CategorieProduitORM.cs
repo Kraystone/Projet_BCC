@@ -16,7 +16,7 @@ namespace Projet_BCC
 
             foreach(CategorieProduitDAO categorie in listeCategorieProduitORM)
             {
-                ProduitView ProduitView = new ProduitView();
+                ProduitView ProduitView = new ProduitView(); 
                 listeProduitViews.Add(ProduitView); 
             }
             return listeProduitViews;
