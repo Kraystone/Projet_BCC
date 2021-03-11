@@ -16,7 +16,7 @@ namespace Projet_BCC
         CategorieProduitView datacategorieProduit;
         ObservableCollection<ProduitView> listProduit;
         ObservableCollection<CategorieView> listCategorie;
-        ObservableCollection<ProduitView> listCategorieProduit2;
+        ObservableCollection<CategorieProduitView> listCategorieProduit2;
 
         int index = 0;
         int selectedProduct = 0;
@@ -96,6 +96,17 @@ namespace Projet_BCC
             {
                 selectedProduct = listProduit.ElementAt<ProduitView>(listeEnchere.SelectedIndex).idProduitProperty;
             }
+        }
+        private void categorieProduit(object sender, RoutedEventArgs r)
+        {
+            listCategorieProduit2 = CategorieProduitORM.getCategorieDUProduitORM(Convert.ToInt32(TextboxProduit.Text));
+            datacategorieProduit = new CategorieProduitView();
+
+            listeCP.ItemsSource = listCategorieProduit2;
+
+            listeCP.DataContext = listCategorieProduit2;
+
+            listeCP.Items.Refresh();
         }
     }
 }

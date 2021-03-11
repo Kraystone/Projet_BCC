@@ -28,9 +28,9 @@ namespace Projet_BCC
             reader.Close();
             return listeCategorieProduit;
         }
-        public static CategorieProduitDAO getCategorieProduitDAL(int idCategorie, int idProduit)
+        public static CategorieProduitDAO getCategorieProduitDAL(int idProduit)
         {
-            string query = "SELECT * FROM categorie_produit WHERE idCatégorie = \"" + idCategorie + "\" and idProduit=" + idProduit + ";";
+            string query = "SELECT c.nom FROM catégorie c JOIN categorie_produit cp ON cp.idCatégorie = c.idCatégorie JOIN produit p on cp.idProduit = p.idProduit WHERE p.idProduit ="+ idProduit + ";";
             MySqlCommand cmd = new MySqlCommand(query, ConnectionDAL.OpenConnection());
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();

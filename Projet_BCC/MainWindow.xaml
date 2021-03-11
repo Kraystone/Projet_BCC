@@ -65,11 +65,24 @@
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding idProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Nom du produit" Binding="{Binding nomProduitProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn x:Name="descriptionProduit" Header="Description du produit" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}"/>
-                                <DataGridTextColumn Header="Categorie du produit" Binding="{Binding categorieProperty, Mode=OneWay}"/>
                                 <DataGridTextColumn x:Name="prixTB" Header="Estimation" Binding="{Binding prixProperty, Mode=TwoWay}"/>
-                                <DataGridTextColumn Header="Choix" Binding="{Binding choixProperty, Mode=OneWay}"/>
                             </DataGrid.Columns>
                         </DataGrid>
+                        <TextBox x:Name="TextboxProduit" Height="23" TextWrapping="Wrap" Margin="513,60,-135,218"/>
+                        <Button Margin="466,-62,-116,320" RenderTransformOrigin="0.5,0.5" Content="Voir les catégorie du produit" Click="categorieProduit" Command="{Binding categorieProduit}"/>
+                        <Grid Height="120" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,90,104,90">
+                            <DataGrid x:Name="listeCP" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"   
+                            BorderBrush="Black" Background="#FFA4A4A4"
+                            ScrollViewer.CanContentScroll="True" 
+                            ScrollViewer.VerticalScrollBarVisibility="Auto"
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            Width="123"
+                            VerticalAlignment="Center" Margin="409,-6,-232,-22" Height="148">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Width="*" Header="Nom" Binding="{Binding _nomCategorieView, Mode=OneWay}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
                     </Grid>
                 </StackPanel>
             </TabItem>

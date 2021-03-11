@@ -10,7 +10,7 @@ namespace Projet_BCC
     class CategorieProduitDAO
     {
         public int idCategorieDao;
-        public string NomCategorieDao;
+        public string NomCategorie;
         public int idProduitDAO;
         public CategorieProduitDAO(int idProduit)
         {
@@ -18,7 +18,7 @@ namespace Projet_BCC
         }
         public CategorieProduitDAO(string nom)
         {
-            this.NomCategorieDao = nom;
+            this.NomCategorie = nom;
         }
         public CategorieProduitDAO(int idProduit, int idCategorie)
         {
@@ -28,12 +28,12 @@ namespace Projet_BCC
 
         public static ObservableCollection<CategorieProduitDAO> getCategorieProduitDAO(int idProduit)
         {
-            ObservableCollection<CategorieProduitDAO> listeCategorieProduit = CategorieProduitDAL.GetCategorieProduitDAL(idProduit);
+            ObservableCollection<CategorieProduitDAO> listeCategorieProduit = CategorieProduitDAL.GetCategorieProduitDAL(idProduit); // error
             return listeCategorieProduit;
         }
         public static CategorieProduitDAO getCategorieProduitDAO(int idCategorie, int idProduit)
         {
-            CategorieProduitDAO produit = CategorieProduitDAL.getCategorieProduitDAL(idCategorie, idProduit);
+            CategorieProduitDAO produit = CategorieProduitDAL.getCategorieProduitDAL(idProduit);
             return produit;
         }
     }

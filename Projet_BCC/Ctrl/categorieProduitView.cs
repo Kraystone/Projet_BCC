@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Projet_BCC
 {
-    class CategorieProduitView
+    public class CategorieProduitView : INotifyPropertyChanged
     {
         public int idProduit;
         public int idCategorie;
-        public string nomCategorieView;
+        private string nomCategorieView;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public CategorieProduitView() { }
 
@@ -20,16 +23,24 @@ namespace Projet_BCC
             idCategorie = idcategorie;
         }
 
-        public CategorieProduitView(string nom)
+        public CategorieProduitView(string nomCategorieView)
         {
             
-            nomCategorieView = nom;
+            this.nomCategorieView = nomCategorieView;
         }
 
-        public string categorieProperty
+        public string _nomCategorieView
         {
             get { return nomCategorieView; }
+            set
+            {
+                nomCategorieView = value; OnPropertyChanged("nomCategorieView");
+            }
         }
 
+        private void OnPropertyChanged(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
